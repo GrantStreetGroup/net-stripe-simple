@@ -1,0 +1,7 @@
+Revision history for Net::Stripe::Simple
+
+0.002     2014-08-22 10:15:57-04:00 America/New_York
+  * validate all parameters required to construct the URL
+
+0.001     2014-08-11 15:37:03-04:00 America/New_York
+
