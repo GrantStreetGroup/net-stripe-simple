@@ -1,5 +1,5 @@
 package Net::Stripe::Simple;
-$Net::Stripe::Simple::VERSION = '0.002';
+
 # ABSTRACT: simple, non-Moose interface to the Stripe API
 
 
