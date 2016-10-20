@@ -40,17 +40,18 @@ sub unbless { _unbless(shift) }
 
 sub _unbless {
     my $v = shift;
-    for ( ref $v ) {
-        when ('ARRAY') {
-            return [ map { _unbless($_) } @$v ];
+    my $ref = ref($v);
+
+    if ($ref eq 'ARRAY') {
+        return [ map { _unbless($_) } @$v ];
+    } elsif ($ref eq 'Net::Stripe::Simple::Data') {
+        return {
+            map { $_ => _unbless( $v->{$_} ) } keys %$v
         }
-        when ('Net::Stripe::Simple::Data') {
-            return {
-                map { $_ => _unbless( $v->{$_} ) } keys %$v
-            }
-        }
-        when (/^JSON/) { return "$v" }
-        default        { return $v };
+    } elsif ($ref =~ /^JSON/) {
+        return "$v";
+    } else {
+        return $v;
     }
 }
 

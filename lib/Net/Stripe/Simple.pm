@@ -611,31 +611,29 @@ sub _encode_params {
             push @components, $ek . '=' . $value->{id};
             next;
         }
-        for ( reftype $value ) {
-            when ('HASH') {
-                for my $sk ( keys %$value ) {
-                    my $sv = $value->{$sk};
-                    next
-                      if ref $sv;  # don't think this PHP convention goes deeper
-                    push @components,
-                      $ek . '[' . uri_escape($sk) . ']=' . uri_escape($sv);
-                }
+
+        my $ref = ref($value);
+        if ($ref eq 'HASH') {
+            for my $sk ( keys %$value ) {
+                my $sv = $value->{$sk};
+                next
+                  if ref $sv;  # don't think this PHP convention goes deeper
+                push @components,
+                  $ek . '[' . uri_escape($sk) . ']=' . uri_escape($sv);
             }
-            when ('ARRAY') {
-                for my $sv (@$value) {
-                    next if ref $sv;    # again, I think we can't go deeper
-                    push @components, $ek . '[]=' . uri_escape($sv);
-                }
+        } elsif ($ref eq 'ARRAY') {
+            for my $sv (@$value) {
+                next if ref $sv;    # again, I think we can't go deeper
+                push @components, $ek . '[]=' . uri_escape($sv);
             }
-            default {
-                $value =    # JSON boolean stringification magic has been erased
-                  ref $value eq 'JSON::PP::Boolean'
-                  ? $value
-                      ? 'true'
-                      : 'false'
-                  : uri_escape($value);
-                push @components, "$ek=$value"
-            }
+        } else {
+            $value =    # JSON boolean stringification magic has been erased
+              ref $value eq 'JSON::PP::Boolean'
+              ? $value
+                  ? 'true'
+                  : 'false'
+              : uri_escape($value);
+            push @components, "$ek=$value"
         }
     }
     return join( '&', @components );
@@ -718,10 +716,13 @@ sub data_object {
     return unless $rr;
     die "forbidden class: $rr" if blessed($ref) and $rr !~ /^JSON::/;
     bless $ref, 'Net::Stripe::Simple::Data' if $rr eq 'HASH';
-    for ($rr) {
-        when ('HASH')  { data_object($_) for values %$ref }
-        when ('ARRAY') { data_object($_) for @$ref }
+
+    if ($rr eq 'HASH') {
+        data_object($_) for values %$ref
+    } elsif ($rr eq 'ARRAY') {
+        data_object($_) for @$ref
     }
+
     return $ref;
 }
 
