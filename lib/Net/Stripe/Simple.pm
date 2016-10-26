@@ -2,9 +2,6 @@ package Net::Stripe::Simple;
 
 # ABSTRACT: simple, non-Moose interface to the Stripe API
 
-
-$Net::Stripe::Simple::VERSION //= '0.01';
-
 use v5.10;
 use strict;
 use warnings;
@@ -35,8 +32,11 @@ sub new {
     $class = ref($class) || $class;
     die 'API key required' unless $api;
     $version //= $STRIPE_VERSION;
+
+    my $pkg_version = $Net::Stripe::Simple::VERSION // '0.01';
+
     my $ua = LWP::UserAgent->new;
-    $ua->agent("$class/$Net::Stripe::Simple::VERSION");
+    $ua->agent("$class/$pkg_version");
     my $auth = 'Basic ' . encode_base64( $api . ':' );
     bless { ua => $ua, auth => $auth, version => $version }, $class;
 }
