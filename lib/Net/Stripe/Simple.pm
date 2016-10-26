@@ -875,7 +875,7 @@ B<Available Actions>
             customer => $customer,
             amount   => 100,
             currency => 'usd',
-            capture  => false,
+            capture  => 'false',
         }
     );
 
