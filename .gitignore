@@ -7,6 +7,7 @@ Build
 !Build/
 Build.bat
 .last_cover_stats
+local
 /Makefile
 /Makefile.old
 /MANIFEST.bak
@@ -14,6 +15,7 @@ Build.bat
 /META.json
 /MYMETA.*
 nytprof.out
+.perl-version
 /pm_to_blib
 *.o
 *.bs
