@@ -1,5 +1,10 @@
 Revision history for Net::Stripe::Simple
 
+{{$NEXT}}
+  * remove reliance on smartmatch (RT #107784)
+  * fix error messages in basic.t (RT #107782)
+  * fix charges documentation (RT #100274)
+
 0.002     2014-08-22 10:15:57-04:00 America/New_York
   * validate all parameters required to construct the URL
 

@@ -728,7 +728,7 @@ subtest Transfers => sub {
     };
     if ( my $e = $@ ) {    # at least the path worked
         ok $e->message =~
-          /Transfer cannot be canceled, because it has already been submitted/,
+          /Transfers to non-Stripe accounts can currently only be reversed while they are pending/,
           'canceled a transfer';
     }
 };
@@ -781,7 +781,7 @@ subtest Balance => sub {
         ok $balance, 'retrieved a balance transaction';
     };
     if ( my $e = $@ ) {
-        is $e->message, "No such balancetransaction: $charge",
+        is $e->message, "No such balance transaction: $charge",
           'retrieved a balance transaction';
     }
 };
