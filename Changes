@@ -1,6 +1,8 @@
 Revision history for Net::Stripe::Simple
 
 {{$NEXT}}
+
+0.004     2016-10-31 09:18:36-04:00 America/New_York
   * declare LWP::Protocol::https dependency
 
 0.003     2016-10-28 15:40:58-04:00 America/New_York
