@@ -2,6 +2,7 @@ on runtime => sub {
     requires 'Devel::StackTrace';
     requires 'HTTP::Request::Common';
     requires 'JSON';
+    requires 'LWP::Protocol::https';
     requires 'LWP::UserAgent';
     requires 'URI::Escape';
 };

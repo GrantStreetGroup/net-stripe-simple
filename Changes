@@ -1,6 +1,7 @@
 Revision history for Net::Stripe::Simple
 
 {{$NEXT}}
+  * declare LWP::Protocol::https dependency
 
 0.003     2016-10-28 15:40:58-04:00 America/New_York
   * remove reliance on smartmatch (RT #107784)
