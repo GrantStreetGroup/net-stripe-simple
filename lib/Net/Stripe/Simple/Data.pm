@@ -67,10 +67,6 @@ __END__
 
 Net::Stripe::Simple::Data - collection of methods to augment a JSON hash
 
-=head1 VERSION
-
-version 0.002
-
 =head1 SYNOPSIS
 
   my $subscription = $stripe->subscriptions(  # API methods give us data objects

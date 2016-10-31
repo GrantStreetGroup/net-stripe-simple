@@ -1,6 +1,8 @@
 Revision history for Net::Stripe::Simple
 
 {{$NEXT}}
+
+0.003     2016-10-28 15:40:58-04:00 America/New_York
   * remove reliance on smartmatch (RT #107784)
   * fix error messages in basic.t (RT #107782)
   * fix charges documentation (RT #100274)

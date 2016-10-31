@@ -31,10 +31,6 @@ __END__
 
 Net::Stripe::Simple::Error - general error class for Net::Stripe::Simple
 
-=head1 VERSION
-
-version 0.002
-
 =head1 DESCRIPTION
 
 This is a subclass of L<Net::Stripe::Simple::Data>. It has no constructor but

@@ -751,10 +751,6 @@ __END__
 
 Net::Stripe::Simple - simple, non-Moose interface to the Stripe API
 
-=head1 VERSION
-
-version 0.002
-
 =head1 SYNOPSIS
 
   use Net::Stripe::Simple;
