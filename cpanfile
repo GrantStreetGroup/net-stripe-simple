@@ -17,23 +17,6 @@ on test => sub {
 };
 
 on develop => sub {
-    requires 'Dist::Zilla::Plugin::AutoPrereqs';
+    requires 'Dist::Zilla::PluginBundle::Author::GSG';
     requires 'Dist::Zilla::Plugin::ExtraTests';
-    requires 'Dist::Zilla::Plugin::Git::GatherDir';
-    requires 'Dist::Zilla::Plugin::Git::Tag';
-    requires 'Dist::Zilla::Plugin::GitHub::Meta';
-    requires 'Dist::Zilla::Plugin::MetaNoIndex';
-    requires 'Dist::Zilla::Plugin::MinimumPerl';
-    requires 'Dist::Zilla::Plugin::NextRelease';
-    requires 'Dist::Zilla::Plugin::PkgVersion';
-    requires 'Dist::Zilla::Plugin::PodCoverageTests';
-    requires 'Dist::Zilla::Plugin::PodSyntaxTests';
-    requires 'Dist::Zilla::Plugin::PodWeaver';
-    requires 'Dist::Zilla::Plugin::PruneCruft';
-    requires 'Dist::Zilla::Plugin::Test::Compile';
-    requires 'Dist::Zilla::Plugin::Test::ReportPrereqs';
-    requires 'Dist::Zilla::Plugin::Test::UnusedVars';
-    requires 'Dist::Zilla::PluginBundle::Basic';
-    requires 'Pod::Elemental::Transformer::List';
-    requires 'Software::License::Perl_5';
 };
