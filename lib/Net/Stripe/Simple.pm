@@ -1,6 +1,7 @@
 package Net::Stripe::Simple;
 
 # ABSTRACT: simple, non-Moose interface to the Stripe API
+# VERSION
 
 use v5.10;
 use strict;
@@ -744,12 +745,6 @@ sub null()  { JSON::null }
 __END__
 
 =pod
-
-=encoding UTF-8
-
-=head1 NAME
-
-Net::Stripe::Simple - simple, non-Moose interface to the Stripe API
 
 =head1 SYNOPSIS
 
@@ -1558,26 +1553,3 @@ You can import the constants individually or all together with C<:const>.
 =item null
 
 =back
-
-=head1 AUTHORS
-
-=over 4
-
-=item *
-
-Grant Street Group <developers@grantstreet.com>
-
-=item *
-
-David F. Houghton <dfhoughton@gmail.com>
-
-=back
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2014 by Grant Street Group.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut

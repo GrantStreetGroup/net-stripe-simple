@@ -1,7 +1,7 @@
 package Net::Stripe::Simple::Data;
 
 # ABSTRACT: collection of methods to augment a JSON hash
-
+# VERSION
 
 use v5.10;
 use strict;
@@ -62,10 +62,6 @@ __END__
 =pod
 
 =encoding UTF-8
-
-=head1 NAME
-
-Net::Stripe::Simple::Data - collection of methods to augment a JSON hash
 
 =head1 SYNOPSIS
 
@@ -153,25 +149,3 @@ Returns a copy of the data with all the magic stripped away. JSON objects are
 converted to their stringified form. The intended use of this is prettier
 debugging dumps.
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
-
-Grant Street Group <developers@grantstreet.com>
-
-=item *
-
-David F. Houghton <dfhoughton@gmail.com>
-
-=back
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2014 by Grant Street Group.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
