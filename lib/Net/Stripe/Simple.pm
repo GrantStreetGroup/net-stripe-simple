@@ -629,7 +629,7 @@ sub _encode_params {
             }
         } else {
             $value =    # JSON boolean stringification magic has been erased
-              ref $value eq 'JSON::PP::Boolean'
+              blessed $value && $value->isa(ref(true())) # hack to work around inheritance issues with JSON booleans
               ? $value
                   ? 'true'
                   : 'false'
@@ -866,7 +866,7 @@ B<Available Actions>
             customer => $customer,
             amount   => 100,
             currency => 'usd',
-            capture  => 'false',
+            capture  => false,
         }
     );
 
