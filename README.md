@@ -1,3 +1,7 @@
+# WARNING
+
+Ownership of this repository has been transferred to https://github.com/infosaas/net-stripe-simple/
+
 # NAME
 
 Net::Stripe::Simple - simple, non-Moose interface to the Stripe API
